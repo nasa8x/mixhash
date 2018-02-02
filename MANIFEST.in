@@ -1,0 +1,4 @@
+include setup.py
+include README.md
+recursive-include mixhash *.py *.c *.h
+prune build
