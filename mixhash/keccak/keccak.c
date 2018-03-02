@@ -10,12 +10,12 @@
 #include "keccak.h"
 
 
-void keccak_hash(const char *input, char *output)
+void keccak_hash(const char *input, char *output, uint32_t len)
 {
 	uint32_t hash[16];
 
 	sph_keccak256_context ctx_keccak;
-    uint32_t len = 80;
+    //uint32_t len = 80;
 
 	sph_keccak256_init(&ctx_keccak);
 	sph_keccak256(&ctx_keccak, input, len /* 80 */);

@@ -18,7 +18,7 @@ def Lyra2re(x):
 #     return lyra2re2_hash.getPoWHash(x)
 
 def Keccak(x):
-    return keccak_hash.getPoWHash(x)
+    return keccak_hash.getPoWHash(x, len(x))
 
 def Qubit(x):
     return qubit_hash.getPoWHash(x)

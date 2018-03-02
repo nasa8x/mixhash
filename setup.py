@@ -74,7 +74,7 @@ x11_hash_module = Extension('x11_hash',
 
 
 setup (	name = 'mixhash',
-    	version = '1.0.0',       
+    	version = '1.0.1',       
 		description = 'Make Genesis Block Proof of Work for multiple Hash Algorithms.',
 		long_description = 'Make Genesis Block Proof of Work for multiple Hash Algorithms.',
 		maintainer = 'Nasa Nguyen',

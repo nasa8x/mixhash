@@ -12,15 +12,16 @@ static PyObject *keccak_getpowhash(PyObject *self, PyObject *args)
 #else
     PyStringObject *input;
 #endif
-    if (!PyArg_ParseTuple(args, "S", &input))
+    int length;
+    if (!PyArg_ParseTuple(args, "Si", &input,&length))
         return NULL;
     Py_INCREF(input);
     output = PyMem_Malloc(32);
 
 #if PY_MAJOR_VERSION >= 3
-    keccak_hash((char *)PyBytes_AsString((PyObject*) input), output);
+    keccak_hash((char *)PyBytes_AsString((PyObject*) input), output, length);
 #else
-    keccak_hash((char *)PyString_AsString((PyObject*) input), output);
+    keccak_hash((char *)PyString_AsString((PyObject*) input), output, length);
 #endif
     Py_DECREF(input);
 #if PY_MAJOR_VERSION >= 3
